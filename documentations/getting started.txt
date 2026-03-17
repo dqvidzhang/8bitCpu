@@ -1,2 +1,88 @@
 3/16/2026
-First time using vscode git github setting up QOL mk
+First time using vscode git github setting up QOL 
+
+Goal for day 1.
+
+
+Steps to make an 8 bit CPU
+1. Pick Cpu stlye
+    What are the different CPU Styles? Why does it matter?
+        From my understanding cpu styles is just how the cpu decides to execute instructions so for example how many steps does it take to execute
+        each instruction
+    So for this project since its an intro project we'll be using multi cycle 
+2. What do we want the CPU to do?
+    8-bit data path - The CPU works on 8-bit values at a time.
+
+    16-bit instruction - Each instruction is 16 bits wide.
+
+    4 registers: R0 R1 R2 R3 - The CPU has 4 small internal storage spots.
+
+    separate instruction and data memory - One memory holds the program, another holds data.
+
+    multi-cycle FSM - The CPU executes instructions in steps like fetch, decode, execute, writeback.
+
+    flags: Zero, maybe Carry - The CPU keeps small status bits after operations.
+
+3.  What instructions do we need to accomplish this?
+        What are instructions?
+            Instructions are tiny sets of cammands for your cpu, so basically a cpus langauge
+    instructions:
+
+    LDI - value into register
+
+    ADD - add
+
+    SUB - subtracts
+
+    CMP - compares
+
+    LOAD - moves data between reg and ram
+
+    STORE - moves data between reg and ram
+
+    JMP - changes instructions
+
+    JZ - changes instructions
+
+    HLT - ends execution
+
+4. Instruction format
+    We will need a way for the cpu to decide which instruction to use in order to do this
+    we can use op codes
+
+    we will set 
+    bits [15:12] = opcode
+
+    bits [11:10] = Rd = destination register
+
+    bits [9:8] = Rs = source register
+
+    bits [7:0] = immediate value or memory address
+
+5. Register Names
+4 registers:
+R0
+
+R1
+
+R2
+
+R3
+
+Each is 8 bits wide.
+
+Since 2 bits can encode 4 choices:
+
+00 = R0
+
+01 = R1
+
+10 = R2
+
+11 = R3
+
+6. Flags
+CPU should at least have:
+
+Z = Zero flag
+
