@@ -52,6 +52,23 @@ Steps to make an 8 bit CPU
 
     we will set 
     bits [15:12] = opcode
+        0000 = LDI
+
+        0001 = ADD
+
+        0010 = SUB
+
+        0011 = CMP
+
+        0100 = LOAD
+
+        0101 = STORE
+
+        0110 = JMP
+
+        0111 = JZ
+
+        1111 = HLT
 
     bits [11:10] = Rd = destination register
 
@@ -86,3 +103,4 @@ CPU should at least have:
 
 Z = Zero flag
 
+6. What .v Files do i need?
