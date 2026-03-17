@@ -1,0 +1,65 @@
+Your first register file should have:
+    4 registers
+    each 8 bits
+    2 read ports
+    1 write port
+    So it should let you:
+    read two registers at the same time
+    write one register on a clock edge
+    Inputs
+    clk
+    we = write enable
+    w_addr = which register to write
+    w_data = value to write
+    r_addr1 = first register to read
+    r_addr2 = second register to read
+    Outputs
+    r_data1
+    r_data2
+
+Understanding notes:
+    Because ALU operations often need two inputs.
+
+    Hand 1
+    Uses r_addr1
+    Hand 2
+    Uses r_addr2
+    Each hand can choose a box independently.
+        Then:
+        what hand 1 finds comes out on r_data1
+        what hand 2 finds comes out on r_data2
+        So if:
+        r_addr1 = 01
+        r_addr2 = 11
+        then:
+        hand 1 opens R1
+        hand 2 opens R3
+        and:
+        r_data1 = contents of R1
+        r_data2 = contents of R3
+
+
+    reg [7:0] regs [3:0];
+        This means:
+        regs is an array
+        it has 4 entries
+        each entry is 8 bits wide
+        So you can think of it like:
+        regs[0] = R0
+        regs[1] = R1
+        regs[2] = R2
+        regs[3] = R3
+
+    assign r_data1 = regs[r_addr1];
+    assign r_data2 = regs[r_addr2];
+        This means:
+        look inside the register array regs
+        use r_addr1 or r_addr2 to choose which register
+        copy that register’s current value to the output
+        So:
+        regs[...] = source
+
+    regs[r_addr1] 
+    So this basically holds an 8 bit data at whatever register
+    assign r_data1 = regs[r_addr1];
+    And this is saying that we take that data at whatever register and whatever data and thats the data we will use dor data1
