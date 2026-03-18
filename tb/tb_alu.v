@@ -30,7 +30,7 @@ module tb_alu;
         b = 8'd4;
         alu_op = 2'b01;
         #10;
-
+        
         // Test zero flag: 7 - 7 = 0
         a = 8'd7;
         b = 8'd7;

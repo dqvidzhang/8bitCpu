@@ -104,3 +104,18 @@ CPU should at least have:
 Z = Zero flag
 
 6. What .v Files do i need?
+
+What I accomplished for 3/16/2026
+Coded ALU
+coded regile
+
+problems i ran into
+mainly syntax error
+
+what i learned
+added comments to as much code as I could inorder to develop an understanding 
+
+Worried about the future if I should try to incooperate this into a physical CPU
+
+Day 2 work on remaining .v Files
+Starting with pc.v
